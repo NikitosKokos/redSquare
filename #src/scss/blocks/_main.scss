@@ -1,0 +1,16 @@
+.main{
+    flex: 1 1 100%;
+    background: #dadada;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    overflow: auto;
+    transition: flex .3s ease-in-out;
+    &._active{
+        flex: 0 0 100%;
+    }
+    #redSquare{
+        background: red;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{
+	"title":"Red Square"
+	})
+	<body>
+		<div class="wrapper">
+			<main class="main">
+				<div id="redSquare"></div>
+			</main>
+			<aside class="aside">
+				<div class="aside__slider"></div>
+				<div class="aside__top">
+					<div class="aside__title">Params</div>
+					<div class="aside__burger">
+						<div class='burger'><span></span></div>
+					</div>
+				</div>
+				<div class="aside__body">
+					<div class="aside__item item-aside">
+						<label for="size" class="item-aside__label">Size</label>
+						<input id="size" type="number" class="item-aside__input" value="300" maxlength="10">
+						<div class="item-aside__choose">
+							<input id="sizePx" name="sizeRadio" type="radio" class="item-aside__hide-input" checked>
+							<label for="sizePx" class="item-aside__radio item-aside__radio_px">px</label>
+							<input id="sizePercent" name="sizeRadio" type="radio" class="item-aside__hide-input">
+							<label for="sizePercent" class="item-aside__radio item-aside__radio_percent">%</label>
+						</div>
+					</div>
+					<div class="aside__item item-aside">
+						<label for="radius" class="item-aside__label">Radius</label>
+						<input id="radius" type="number" class="item-aside__input" maxlength="10">
+						<div class="item-aside__choose">
+							<input id="radiusPx" name="radiusRadio" type="radio" class="item-aside__hide-input" checked>
+							<label for="radiusPx" class="item-aside__radio item-aside__radio_px">px</label>
+							<input id="radiusPercent" name="radiusRadio" type="radio" class="item-aside__hide-input">
+							<label for="radiusPercent" class="item-aside__radio item-aside__radio_percent">%</label>
+						</div>
+					</div>
+				</div>
+			</aside>
+		</div>
+		@@include('_js.html',{})
+	</body>
+</html>
