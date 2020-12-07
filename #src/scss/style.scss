@@ -5,6 +5,7 @@
 @import "./base/zeroing";
 @import "./base/ibg"; 
 @import "./base/burger"; 
+@import "./base/select"; 
 
 // blocks
 @import "./blocks/header";
@@ -15,7 +16,7 @@
 // global styles
 ._container {
 	max-width: $maxWidthContainer + px;
-	margin: 0 auto;
+  margin: 0 auto;
 	@media (max-width: $md1+px) {
 		max-width: 970px;
 	}
@@ -31,6 +32,7 @@
 .wrapper {
 	width: 100%;
 	min-height: 100%;
+	max-height: 100vh;
 	overflow: hidden;
 	display: flex;
 	&._loaded {
@@ -43,6 +45,123 @@
 
 body.hidden{
   overflow: hidden;
+}
+
+body._dark{
+	.main{
+		background: rgb(107, 107, 107);
+        &::-webkit-scrollbar-thumb{
+            background: #eee;
+            border-radius: 8px;
+            border: 3px solid  rgb(107, 107, 107);
+        }
+        &::-webkit-scrollbar-track{
+            background: transparent;
+        }
+	}
+	.zoom-main{
+		&__title{
+			color: $white;
+		}
+	}
+	  .__select__title {
+		color: $white;
+	  }
+	  .__select__content {
+		transition: all .3s ease-in-out,border .1s ease-in-out,background-color .1s ease-in-out;
+		background-color: #333;
+		border: 1px solid #eee;
+	  }
+	  .__select__input {
+	  
+		&:checked + label {
+			transition: all .3s ease-in-out,border .1s ease-in-out,background-color .1s ease-in-out;
+			background-color: #eee; 
+			color: #111;  
+		}
+	  }
+	  .__select__label {
+		color: #eee;
+		@media (min-width: 992px){
+		   &:hover{
+			background-color: #eee;  
+			color: #111;    
+		 }
+		}
+	  }
+	  .aside{
+		  background: #333;
+		  &__top{
+			background: #111;
+		  }
+		  &__icon{
+			  svg{
+				  path{
+					  fill: $white;
+				  }
+			  }
+		  }
+		  
+		  &__label{
+			  color: $white;
+			  &:after{
+                background: #333;
+				}
+				&:before{
+					right: -5px;
+					background: $white;
+					width: 20px;
+					height: 20px;
+				}
+		  }
+		  &__title{
+			color: $white;
+		  }
+		  &__slider{
+			background: rgb(163, 163, 163);
+			 &:after{
+				content: '';
+				height: 50px;
+				width: 8px;
+				background: #e3e3e3;
+				border-radius: 8px;
+			}
+		}
+		&__body{
+			&::-webkit-scrollbar-thumb{
+				background: #eee;
+				border-radius: 8px;
+				border: 3px solid #333;
+			}
+		}
+	  }
+	  .item-aside {
+		&__label {
+			color: $white;
+		}
+	
+		&__input {
+			color: $white;
+			background: #111;
+		}
+		&__hide-input{
+			&:checked + label{
+				color: #111;
+				background: $white;
+			}
+			
+		}
+		&__color{
+			&:before{
+				background: $white;
+				color: #111;
+			}
+		}
+		&__radio {
+			color:$white;
+        	background: #111;
+		}
+	}
 }
 
 // media

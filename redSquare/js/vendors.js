@@ -363,4 +363,3 @@ function throttle(func, wait, options) {
 }
 
 // export default throttle
-;
